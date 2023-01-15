@@ -80,7 +80,6 @@ while True:
 
         result1, result2, result11 = ''
 
-        # 일본어
         try:
             result1 = soup.find('div', {'class': 'jp_dic_section search_result dic_jp_entry'})                 .find('dl', {'class': 'dic_search_result'}).find('dd')                .find('sup', {'class': 'huri'}).previous_sibling.get_text()
             result11 = re.sub('[0-9\s. ]','',result1)
@@ -100,4 +99,3 @@ while True:
     df.to_excel(excel_save+'.xlsx')
 
     print(ending)
-
